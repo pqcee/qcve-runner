@@ -1,0 +1,7 @@
+name: pqcee/qcve-runner
+version: 1.0.0
+description: testing cpp codeql
+dependencies:
+        codeql/cpp-all: "*" 
+extractor: cpp
+
