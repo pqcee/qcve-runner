@@ -18,7 +18,7 @@ jobs:
         id: username-match
         with:
           text: ${{ github.event.pull_request.body }} 
-          regex: '#username=(\w+)'
+          regex: '#username=(\S+)'
       - name: Extracted username exist
         run: |
           if [ "${{ steps.username-match.outputs.group1 }}" == "" ]; then
@@ -29,7 +29,7 @@ jobs:
         id: database-match
         with:
           text: ${{ github.event.pull_request.body }} 
-          regex: '#database=(\w+)'
+          regex: '#database=(\S+)'
       - name: Extracted database exist
         run: |
           if [ "${{ steps.database-match.outputs.group1 }}" == "" ]; then
